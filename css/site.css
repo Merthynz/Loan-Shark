@@ -3,6 +3,7 @@
     --secondary: #ff993b;
     --dark-color: #292929;
     --white-color: #e7e7e7;
+    --pink-color: #D75281;
 }
 
 body{
@@ -62,7 +63,7 @@ main>.container {
 }
 
 .checklist> li i {
-    color: var(--secondary);
+    color: var(--pink-color);
 }
 
 code[class*="language-"],
@@ -71,6 +72,33 @@ code[class*="language-"],
     word-break: break-all;
     word-wrap: break-word;
     }
+
+@media only screen and (max-width: 520px) {
+    .input_page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .LC_title {
+        padding-top: 10px;
+    }
+
+    form> label {
+        text-align: center;
+    }
+
+    #loanAmount,
+    #loanTerm,
+    #interestRate {
+        text-align: center;
+    }
+
+    .YMP_title {
+        padding-top: 30px;
+    }
+}
 
 
 @media only screen and (max-width: 400px) {

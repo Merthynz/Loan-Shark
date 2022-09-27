@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Renato Erive</title>
+    <title>LOAN SHARK: A Coding Project by Renato Erive</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
     <!-- ==== Nav Section ==== -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/rens_logo.png" class="d-inline-block align-text-top" alt="Ren's Logo" width="42" height="30">  APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="img/rens_logo.png" class="d-inline-block align-text-top" alt="Ren's Logo" width="42" height="30">  LOAN SHARK</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,8 +51,80 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
     <div class="container">
-
+        <div class="row input_page">
+            <div class="col-12 LC_title">
+                <h1>Loan Calculator</h1>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="p-3 bg-light">
+                    
+                    <form class="row">
+                        <div class="col-12">
+                            <label>Loan Amount ($)</label>
+                            <input id="loanAmount" type="number" class="form-control" placeholder="Loan Amount" value="15000" aria-label="Loan Amount">
+                        </div>
+                        <div class="col-12">
+                            <label>Payment Terms (in months)</label>
+                            <input id="loanTerm" type="number" class="form-control" placeholder="Loan Term" value="60" aria-label="Loan Term">
+                        </div>
+                        <div class="col-12">
+                            <label>Rate (%)</label>
+                            <input id="interestRate" type="number" class="form-control" placeholder="Interest Rate" value="3" aria-label="Interest Rate">
+                        </div>
+                        <div class="col-12 d-flex justify-content-end mt-3">
+                            <button id="btnCalculate" type="button" class="btn btn-outline-secondary btn-md">Calculate</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="d-flex justify-content-center YMP_title"><h3>Your Monthly Payments</h3></div>
+                <div class="d-flex justify-content-center pt-3 pb-4"><h1 id="monthlyPaymentOutput"></h1></div>
+            <div class="row">   
+                <div class="lh-1 col justify-content-start" >
+                    <p>Total Principal</p>
+                    <p>Total Interest</p>
+                    <p>Total Cost</p>
+                </div>
+                <div class="lh-1 col justify-content-end">
+                    <p id="totalPrincipalOutput"></p>
+                    <p id="totalInterestOutput"></p>
+                    <p id="totalCostOutput"></p>
+                </div>
+            </div>  
+            </div>
+            <div class="col mt-3 gx-2">
+                <div class="table-responsive">  
+                    <table class="table table-striped">
+                        <thead class="col-12 table-dark text-light border-3">
+                            <tr>
+                                <th>Month</th>
+                                <th>Payment</th>
+                                <th>Principal</th>
+                                <th>Interest</th>
+                                <th>Total Interest</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="amortizationTable">
+                            <!-- Results Go Here -->
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <template id="tableRowTemplate">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
     </main>
     <!-- ==== Footer Section ==== -->
     <footer class="footer mt-auto py-3">
@@ -81,5 +153,8 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="js/site.js"></script>
+    <script>
+        document.getElementById("btnCalculate").addEventListener("click", getValues);
+    </script>
 </body>
 </html>
